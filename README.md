@@ -19,8 +19,8 @@ create 'log_001', {NAME=>'person'}, {NAME=>'page'}
 O propósito deste exemplo é capturar qualquer mudança realizada na tabela "tbl_001" e registrar a mudança na tabela "log_001", ou seja, se for inserido, atualizado ou removido um registro em "tbl_001", a mudança será registrada em "log_001", inserindo um novo registro com a "rowkey" igual a "rowkey | operation type | timestamp", ficando assim:
 
 ```sh
-$put operation
+--put operation
 1006 | P | 1522088561272 
-$delete operation
+--delete operation
 1006 | D | 1522088561272
 ```
