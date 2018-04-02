@@ -10,7 +10,7 @@ O coprocessor pode ser desenvolvido como: observer ou endpoint.
 
 Os coprocessadores não são projetados para serem utilizados pelos usuários finais, mas pelos desenvolvedores. Coprocessadores são executados diretamente no Region Server, portanto um código mal intencionado pode um derrubar seu Region Server, ou seja, cuidado ao implementá-lo.
 
-Abaixo criarei um simples exemplo de Observer Coprocessor para mostrar exatamente o funcionamento do mesmo. 
+Abaixo criarei um simples exemplo de Observer Coprocessor para mostrar exatamente o funcionamento do mesmo. O exemplo criado foi executado na VM da Cloudera. 
 Para iniciar iremos criar 2 tabelas no Hbase, conforme abaixo:
 
 ```sh
@@ -26,3 +26,6 @@ O propósito deste exemplo é capturar qualquer mudança realizada na tabela "tb
 --delete operation
 1006 | D | 1522088561272
 ```
+
+Faça download do arquivo [a link](https://github.com/user/repo/blob/branch/other_file.md)
+
