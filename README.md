@@ -41,4 +41,5 @@ hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dmapreduce.job.queuename=hdqu
 ```
 * Obs.: Uma outra alternativa para isso seria utilizar o PIG, o que envolveria uma outra ferramenta, mas para simplificar optei por me ater ao HBase.
 
-
+Tendo agora a tabela tbl_001 do HBase populada, vamos implementar o coprocessor.
+1. Escreva seu coprocessor como [HbaseCopro001.java](https://github.com/easofiati/HBase-coprocessor/blob/master/tbl_001.csv)
