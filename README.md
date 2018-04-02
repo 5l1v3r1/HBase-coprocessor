@@ -27,5 +27,5 @@ O propósito deste exemplo é capturar qualquer mudança realizada na tabela "tb
 1006 | D | 1522088561272
 ```
 
-Faça download do arquivo [a link](https://github.com/user/repo/blob/branch/other_file.md)
+Faça download do arquivo [tbl_001.csv](https://github.com/easofiati/HBase-coprocessor/blob/master/tbl_001.csv)
 
