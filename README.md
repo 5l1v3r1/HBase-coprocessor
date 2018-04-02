@@ -56,4 +56,9 @@ alter 'tbl_001', METHOD => 'table_att_unset', NAME => 'coprocessor$1'
 
 Pronto! O coprocessor está implementado, ou seja, agora você já pode testá-lo. Para testar você pode realizar novamente a ingestão de dados na tabela tbl_001 do HBase através da ferramenta TImportTSV do HBase, desta forma todos os registros atualizados na tabela tbl_001 serão inseridos na tabela log_001 do HBase. Outro teste a ser realizado é apagar, alterar ou inserir um registro na tabela tbl_001 e analisar o resultado na tabela log_001. 
 
-Isso é apenas para demonstrar o que pode ser feito com o coprocessor no HBase, é apenas um pedacinho, tem muito mais sobre esse assunto a ser abordado, mas serve como uma primeira referência para entender o funcionamento do mesmo.
+Isso é apenas para demonstrar o que pode ser feito com o coprocessor no HBase, é apenas uma introdução, tem muito mais sobre esse assunto a ser abordado, mas serve como uma primeira referência para entender o funcionamento do mesmo.
+
+Abaixo segue alguns links de referência.
+- [https://www.3pillarglobal.com/insights/hbase-coprocessors](https://www.3pillarglobal.com/insights/hbase-coprocessors)
+- [https://blogs.apache.org/hbase/entry/coprocessor_introduction](https://blogs.apache.org/hbase/entry/coprocessor_introduction)
+- [https://hbase.apache.org/](https://hbase.apache.org/)
