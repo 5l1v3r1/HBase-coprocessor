@@ -29,3 +29,16 @@ O propósito deste exemplo é capturar qualquer mudança realizada na tabela "tb
 
 Faça download do arquivo [tbl_001.csv](https://github.com/easofiati/HBase-coprocessor/blob/master/tbl_001.csv)
 
+Agora vamos importar o arquivo tbl_001.csv para a tabela tbl_001 no HBase. 
+1. Copie o arquivo tbl_001.csv para o HDFS.
+```sh
+hdfs dfs -put tbl_001 /tmp
+```
+
+2. Importe o arquivo para o HBase, para isso utilizaremos da ferramente TImportTSV do próprio HBase.
+```sh
+hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dmapreduce.job.queuename=hdqueue -Dimporttsv.separator=',' -Dimporttsv.columns=HBASE_ROW_KEY,person:name,person:address,person:country,person:company,person:email,page:url,page:checked,page:valid tbl_001 hdfs:///tmp/tbl_001.csv
+```
+* Obs.: Uma outra alternativa para isso seria utilizar o PIG, o que envolveria uma outra ferramenta, mas para simplificar optei por me ater ao HBase.
+
+
