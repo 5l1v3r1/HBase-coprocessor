@@ -11,21 +11,23 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.HBaseConfiguration;
-import org.apache.hadoop.hbase.client.HTable;
+import org.apache.hadoop.hbase.client.Connection;
+import org.apache.hadoop.hbase.client.ConnectionFactory;
 import org.apache.hadoop.hbase.client.Mutation;
 import org.apache.hadoop.hbase.client.Result;
+import org.apache.hadoop.hbase.client.Table;
 import org.apache.hadoop.hbase.coprocessor.BaseRegionObserver;
 import org.apache.hadoop.hbase.coprocessor.ObserverContext;
 import org.apache.hadoop.hbase.coprocessor.RegionCoprocessorEnvironment;
-import org.apache.hadoop.hbase.regionserver.HRegion;
 import org.apache.hadoop.hbase.regionserver.MiniBatchOperationInProgress;
 import org.apache.hadoop.hbase.util.Bytes;
 import org.apache.hadoop.hbase.client.Put;
 import org.apache.hadoop.hbase.Cell;
 import org.apache.hadoop.hbase.CellUtil;
+import org.apache.hadoop.hbase.TableName;
 
 public class HBaseCopro001 extends BaseRegionObserver {
-	public static final Log LOG = LogFactory.getLog(HRegion.class);
+	public static final Log LOG = LogFactory.getLog(HBaseCopro001.class);
 
 	@Override
 	public void preBatchMutate(ObserverContext<RegionCoprocessorEnvironment> c,
@@ -33,12 +35,13 @@ public class HBaseCopro001 extends BaseRegionObserver {
 			throws IOException {
 
 		String tableName = c.getEnvironment().getRegion().getRegionInfo().getTable().getNameAsString();
-		LOG.info("Project: PRJ_001 | Table: " + tableName + " | Coprocessor: hdfs:///eas/eas.jar|com.eas.HBaseCoprocessor | Event: prePut | Status: Initialized");
+		LOG.info("Project: PRJ_001 | Table: " + tableName + " | Coprocessor Status: Initialized");
 		
 		try {		
 			Configuration config = HBaseConfiguration.create();
-			HTable htlog_001 = new HTable(config, "log_001");
-
+			Connection conn = ConnectionFactory.createConnection(config);
+			Table htlog_001 = conn.getTable(TableName.valueOf("log_001"));
+		
 			for (int i = 0; i < miniBatchOp.size(); i++) { 
 				Mutation operation = miniBatchOp.getOperation(i); 
 				byte[] rkey = operation.getRow();
@@ -95,13 +98,16 @@ public class HBaseCopro001 extends BaseRegionObserver {
 				} 
 			} 
 			htlog_001.close();
-			LOG.info("Project: PRJ_001 | Table: " + tableName + " | Coprocessor: hdfs:///eas/eas.jar|com.eas.HBaseCoprocessor | Event: prePut | Status: Finalized");
+			conn.close();
+			LOG.info("Project: PRJ_001 | Table: " + tableName + " | Coprocessor Status: Finalized");
 
 			super.preBatchMutate(c, miniBatchOp);
 
 		} catch (IOException error) {
-			LOG.info("Project: PRJ_001 | Table: " + tableName + " | Coprocessor: hdfs:///eas/eas.jar|com.eas.HBaseCoprocessor | Event: prePut | Status: Error");
+			LOG.info("Project: PRJ_001 | Table: " + tableName + " | Coprocessor Status: Error");
 			error.printStackTrace();
 		}
+		
 	}
+
 }
