@@ -51,7 +51,7 @@ Tendo agora a tabela tbl_001 do HBase populada, vamos implementar o coprocessor.
 
 ```sh
 --Load coprocessor
-alter 'tbl_001', METHOD => 'table_att', 'coprocessor'=>'hdfs:///eas/copro001.jar|com.eas.HBaseCopro001|1001|arg1=1,arg2=2'
+alter 'tbl_001', METHOD => 'table_att', 'coprocessor'=>'hdfs:///tmp/copro001.jar|com.eas.HBaseCopro001|1001|arg1=1,arg2=2'
 --Unload coprocessor
 alter 'tbl_001', METHOD => 'table_att_unset', NAME => 'coprocessor$1'
 ```
