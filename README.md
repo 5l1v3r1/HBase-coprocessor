@@ -47,7 +47,7 @@ Tendo agora a tabela tbl_001 do HBase populada, vamos implementar o coprocessor.
 1. Escreva o coprocessor [HbaseCopro001.java](https://github.com/easofiati/HBase-coprocessor/blob/master/HBaseCopro001.java)
 2. Exporte o código Java do coprocessor para um arquivo ".jar".
 3. Copie o arquivo ".jar" gerado anteriormente para a pasta "/tmp" do HDFS. Um ponto de atenção é que o HBase deve ser capaz de localizar o ".jar".
-4. Anexe o coprocessor a tabela tbl_001 do HBase. Estou exemplificando com o load dinâmico do coprocessor no HBase, o que julgo a maneira mais interessante, mas existe também o load estático, que não vou citar e pode ser pesquisado posteriormente nos links de referência no final deste.]
+4. Anexe o coprocessor a tabela tbl_001 do HBase. Estou exemplificando com o load dinâmico do coprocessor no HBase, o que julgo a maneira mais interessante, mas existe também o load estático, que não vou citar e pode ser pesquisado posteriormente nos links de referência no final deste.
 
 ```sh
 --Load coprocessor
