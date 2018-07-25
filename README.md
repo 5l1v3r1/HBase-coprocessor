@@ -37,7 +37,7 @@ Agora vamos importar o arquivo tbl_001.csv para a tabela tbl_001 no HBase.
 hdfs dfs -put tbl_001 /tmp
 ```
 
-2. Importe o arquivo para o HBase, para isso utilizaremos da ferramente [ImportTSV](https://github.com/easofiati/HBase-ingestao) do próprio HBase.
+2. Importe o arquivo para o HBase, para isso utilizaremos da ferramenta [ImportTSV](https://github.com/easofiati/HBase-ingestao) do próprio HBase.
 ```sh
 hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dmapreduce.job.queuename=hdqueue -Dimporttsv.separator=',' -Dimporttsv.columns=HBASE_ROW_KEY,person:name,person:address,person:country,person:company,person:email,page:url,page:checked,page:valid tbl_001 hdfs:///tmp/tbl_001.csv
 ```
