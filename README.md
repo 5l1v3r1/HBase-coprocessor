@@ -10,7 +10,7 @@ O coprocessor pode ser desenvolvido como:
 
 Os coprocessadores não são projetados para serem utilizados pelos usuários finais, mas pelos desenvolvedores. Coprocessadores são executados diretamente no Region Server, portanto um código mal intencionado pode derrubar seu Region Server, ou seja, cuidado ao implementá-lo.
 
-Abaixo criarei um simples exemplo de Observer Coprocessor para mostrar exatamente o funcionamento do mesmo. O exemplo criado foi executado na VM da Cloudera e exige um pouco de conhecimento em Hadoop, Hbase e Java
+Abaixo criarei um simples exemplo de Observer Coprocessor para mostrar exatamente o funcionamento do mesmo. O exemplo criado foi executado na VM da Cloudera e exige um pouco de conhecimento em Hadoop, Hbase e Java.
 Para iniciar iremos criar 2 tabelas no Hbase, conforme abaixo:
 
 ```sh
