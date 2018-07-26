@@ -62,7 +62,7 @@ Uma dica importante, é que caso necessite alterar o código do coprocessor, mes
 
 Isso é apenas para demonstrar um pouco do que pode ser feito com o coprocessor no HBase, é apenas uma introdução, tem muito mais sobre esse assunto a ser abordado, mas serve como uma primeira referência para entender o funcionamento do mesmo.
 
-Abaixo segue alguns links de referência.
+Abaixo segue alguns links de referência:
 - [https://www.3pillarglobal.com/insights/hbase-coprocessors](https://www.3pillarglobal.com/insights/hbase-coprocessors)
 - [https://blogs.apache.org/hbase/entry/coprocessor_introduction](https://blogs.apache.org/hbase/entry/coprocessor_introduction)
 - [https://hbase.apache.org/](https://hbase.apache.org/)
