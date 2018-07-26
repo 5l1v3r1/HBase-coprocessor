@@ -56,7 +56,7 @@ alter 'tbl_001', METHOD => 'table_att', 'coprocessor'=>'hdfs:///tmp/copro001.jar
 alter 'tbl_001', METHOD => 'table_att_unset', NAME => 'coprocessor$1'
 ```
 
-Pronto! O coprocessor está implementado, ou seja, agora você já pode testá-lo. Para testar você pode realizar novamente a ingestão de dados na tabela tbl_001 do HBase através da ferramenta TImportTSV do HBase, desta forma todos os registros atualizados na tabela tbl_001 serão inseridos na tabela log_001 do HBase. Outro teste a ser realizado é apagar, alterar ou inserir um registro na tabela tbl_001 e analisar o resultado na tabela log_001. 
+Pronto! O coprocessor está implementado, ou seja, agora você já pode testá-lo. Para testar você pode realizar novamente a ingestão de dados na tabela tbl_001 do HBase através da ferramenta ImportTSV do HBase, desta forma todos os registros atualizados na tabela tbl_001 serão inseridos na tabela log_001 do HBase. Outro teste a ser realizado é apagar, alterar ou inserir um registro na tabela tbl_001 e analisar o resultado na tabela log_001. 
 
 Uma dica importante, é que caso necessite alterar o código do coprocessor, mesmo que você atualize o arquivo ".jar" no HDFS o HBase não irá reconhecer a alteração, pois a classe já subiu em memória, nesse caso será necessário reiniciar o serviço do HBase.
 
